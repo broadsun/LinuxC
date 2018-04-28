@@ -1,6 +1,7 @@
 #include "get_num.h"
-
+#include <stdio.h>
 int main(int argc, char* argv[]) {
-    gnFail("fname", "msg", argv[0], "name");   
+    int xx = getInt(argv[1], 0100, "xxx") ;
+    printf("%d\n", xx);
     return 0;
 }
