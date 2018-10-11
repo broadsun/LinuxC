@@ -86,3 +86,6 @@ dkms.conf
 
 #blade build
 build64_release*
+.Building.lock
+.sconsign.dblite
+blade-bin

@@ -12,7 +12,7 @@ if __name__ == '__main__':
         
         l=c.split("href=\"")
         for le in l:
-            if le.find(".c") != -1 and le.find(".c.html") == -1:
+            if (le.find(".c") != -1 or le.find(".h") != -1 ) and le.find(".c.html") == -1:
                 sl=le.split("\">")
                 rc= requests.get(url+sl[0])
                 with open(outdir+"/"+sl[0], "w") as code:
