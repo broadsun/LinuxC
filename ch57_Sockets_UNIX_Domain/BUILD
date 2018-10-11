@@ -1,31 +1,7 @@
 cc_binary (
-name = 'copy',
+name = 'us_xfr_sv',
 srcs = [
-	'copy.c',
-],
-incs = [
-	'../ch03_lib',
-],
-deps = [
-	'//ch03_lib:lib'
-],
-)
-cc_binary (
-name = 'seek_io',
-srcs = [
-	'seek_io.c',
-],
-incs = [
-	'../ch03_lib',
-],
-deps = [
-	'//ch03_lib:lib'
-],
-)
-cc_binary (
-name = 'test_rw_from_stdio',
-srcs = [
-    'test_rw_from_stdio.c',
+    'us_xfr_sv.c',
 ],
 incs = [
     '../ch03_lib',
@@ -35,9 +11,33 @@ deps = [
 ],
 )
 cc_binary (
-name = 'test_cpholes',
+name = 'us_xfr_cl',
 srcs = [
-    'test_cpholes.c',
+    'us_xfr_cl.c',
+],
+incs = [
+    '../ch03_lib',
+],
+deps = [
+    '//ch03_lib:lib'
+],
+)
+cc_binary (
+name = 'ud_ucase_cl',
+srcs = [
+    'ud_ucase_cl.c',
+],
+incs = [
+    '../ch03_lib',
+],
+deps = [
+    '//ch03_lib:lib'
+],
+)
+cc_binary (
+name = 'ud_ucase_sv',
+srcs = [
+    'ud_ucase_sv.c',
 ],
 incs = [
     '../ch03_lib',
