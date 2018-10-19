@@ -82,3 +82,15 @@ deps = [
     '//ch03_lib:lib'
 ],
 )
+cc_binary (
+name = 'test',
+srcs = [
+    'test.c',
+],
+incs = [
+    '../ch03_lib',
+],
+deps = [
+    '//ch03_lib:lib'
+],
+)

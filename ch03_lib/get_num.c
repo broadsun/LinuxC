@@ -23,6 +23,10 @@
    the value of a command-line argument ('arg'), the name of that
    command-line argument ('name'), and a diagnostic error message ('msg'). */
 
+/*
+fname error (in name): msg
+        offending test: arg
+*/
 static void
 gnFail(const char *fname, const char *msg, const char *arg, const char *name)
 {
@@ -35,7 +39,6 @@ gnFail(const char *fname, const char *msg, const char *arg, const char *name)
 
     exit(EXIT_FAILURE);
 }
-
 /* Convert a numeric command-line argument ('arg') into a long integer,
    returned as the function result. 'flags' is a bit mask of flags controlling
    how the conversion is done and what diagnostic checks are performed on the
