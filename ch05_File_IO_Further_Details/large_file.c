@@ -14,7 +14,7 @@
 
    This program is Linux-specific.
 */
-#define _LARGEFILE64_SOURCE
+#define _LARGEFILE64_SOURCE // or define _FILE_OFFSET_BITS when compiling,such as "gcc -D _FILE_OFFSET_BITS=64 xx.c"
 #include <sys/stat.h>
 #include <fcntl.h>
 #include "tlpi_hdr.h"
