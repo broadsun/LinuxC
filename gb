@@ -1,0 +1,34 @@
+BNAME=$1
+TARGET=./BUILD
+function CreateFileIfNotExist() {
+    if [[ ! -f $TARGET ]];then
+        touch $TARGET
+        echo -e "\n" > $TARGET
+    fi  
+}
+function run() {
+    exist_flag=$(grep "name = \'$BNAME\'" $TARGET | wc -l)
+    if [[ $exist_flag > 0 ]];then
+        echo "already exist"
+        exit 0
+    fi 
+    sed -i '$a\cc_binary (' $TARGET
+    sed -i "\$a\name = \'$BNAME\'," $TARGET
+    sed -i '$a\srcs = [' $TARGET
+    sed -i "\$a\    \'$BNAME.c\'," $TARGET
+    sed -i '$a\],' $TARGET
+    sed -i '$a\incs = [' $TARGET
+    sed -i "\$a\    \'../ch03_lib\'," $TARGET
+    sed -i '$a\],' $TARGET
+    sed -i '$a\deps = [' $TARGET
+    sed -i "\$a\    \'//ch03_lib:lib\'," $TARGET
+    sed -i '$a\],' $TARGET
+    sed -i '$a\)' $TARGET
+}
+function main() {
+    CreateFileIfNotExist
+    run
+}
+main
+
+
